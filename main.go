@@ -2,20 +2,29 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"strconv"
 )
 
 func main() {
-	rev, _ := strconv.Atoi(os.Args[1])
-	exp, _ := strconv.Atoi(os.Args[2])
-	tr, _ := strconv.ParseFloat(os.Args[3], 64)
+	var rev float64
+	var exp float64
+	var tr float64
 
-	e := float64(rev - exp)
-	p := e - (e * tr)
-	r := e / p
+	fmt.Print("Revenue: ")
+	fmt.Scan(&rev)
 
-	fmt.Printf("Ebt: $%.2f", e)
-	fmt.Printf("\nProphet after tax: $%.2f", p)
-	fmt.Printf("\nEarnings to prophet rate: %.2f", r)
+	fmt.Print("Expenses: ")
+	fmt.Scan(&exp)
+
+	fmt.Print("Tax Rate: ")
+	fmt.Scan(&tr)
+
+	ebt := rev - exp
+	tax := ebt * (tr / 100)
+	prof := ebt - tax
+	rat := (prof / rev) * 100
+
+	fmt.Printf("Ebt: $%.2f", ebt)
+	fmt.Printf("\nTax bill was: $%.2f", tax)
+	fmt.Printf("\nProphet after tax: $%.2f", prof)
+	fmt.Printf("\nProphet to revenue rate: %%%.2f", rat)
 }
