@@ -25,6 +25,6 @@ func main() {
 
 	fmt.Printf("Ebt: $%.2f", ebt)
 	fmt.Printf("\nTax bill was: $%.2f", tax)
-	fmt.Printf("\nProphet after tax: $%.2f", prof)
-	fmt.Printf("\nProphet to revenue rate: %%%.2f", rat)
+	fmt.Printf("\nProfit after tax: $%.2f", prof)
+	fmt.Printf("\nProfit to revenue rate: %%%.2f", rat)
 }
